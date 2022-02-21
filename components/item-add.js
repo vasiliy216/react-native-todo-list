@@ -19,7 +19,7 @@ const ItemAdd = props => {
                     placeholder='New Item'
                     style={{ width: "100%" }}
                     value={text}
-                    onChange={e => ChangeData(e.target.value)}
+                    onChange={ChangeData}
                 />
             </View>
             <Button
@@ -34,7 +34,7 @@ const ItemAdd = props => {
 
 const Group = styled.View`
     display: flex;
-
+    margin-bottom: 10px;
 `;
 
 export default ItemAdd

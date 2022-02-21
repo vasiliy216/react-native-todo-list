@@ -22,23 +22,23 @@ const Item = props => {
                 <MaterialCommunityIcons
                     name={`${read ? "checkbox-marked" : "checkbox-blank-outline"}`}
                     size={24}
-                    color="#007bff" />
+                    color="#007bff"
+                    onPress={CheckedItem.bind(this, id)}
+                />
             </ItemWrapperCheckbox>
             <ItemWrapperText>
-                <ItemText>Hello big Hello big Hello big Hello </ItemText>
+                <ItemText read={read}>{text}</ItemText>
             </ItemWrapperText>
             <ItemWrapperDelete>
                 <AntDesign
                     name="delete"
                     size={24}
-                    color="#c4183c" />
+                    color="#c4183c"
+                    onPress={DeleteItem.bind(this, id)}
+                />
             </ItemWrapperDelete>
         </ItemWrapper>
     )
-}
-
-Item.defaultProps = {
-    read: false,
 }
 
 const ItemWrapper = styled.View`
@@ -48,21 +48,22 @@ const ItemWrapper = styled.View`
     align-items: center;
 
     background-color: #fff;
-    shadow-color: #000;
-    shadow-offset: {
-        width: 0,
-        height: 2,
-    };
-    shadow-opacity: 0.25;
-    shadow-radius: 4;
-
-    elevation: 5;
     
     border-radius: 5px;
     border: 1px solid #e1e5eb;
     
-    margin-top: 10px;
+    margin-bottom: 10px;
 `;
+
+// shadow-color: #000;
+//     shadow-offset: {
+//         width: 0,
+//         height: 2,
+//     };
+//     shadow-opacity: 0.25;
+//     shadow-radius: 4;
+
+//     elevation: 5;
 
 const ItemWrapperCheckbox = styled.View`
     padding: 15px;
